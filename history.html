@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elm Coffee Roaster</title>
+    <style>
+        .coffee-text {
+            color: brown;
+            font-size: 20px;
+        }
+        #coffee-image {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>History</h1>
+
+    <p class="coffee-text" id="intro-para">
+        Meet Elm, the heart and soul behind our Coffee Cafe. With a passion for coffee that began as a childhood fascination, Elm's journey into the world of coffee is nothing short of inspiring. Elm's story starts with their travels across coffee-producing regions, where they developed a deep appreciation for the art and science of coffee cultivation. After gaining knowledge from local farmers and experts, Elm returned home with a vision to share the magic of coffee with our community.
+
+Elm's barista journey began as an apprentice at a renowned coffee shop, where they honed their craft and refined their skills in brewing and latte art. Over the years, Elm's dedication and commitment to the perfect cup of coffee have made them a beloved figure in the Coffee Cafe family.
+
+From their early experiments with coffee blends to their unforgettable signature drinks, Elm has become a true coffee connoisseur. Their artistry in crafting personalized coffee experiences for each customer is second to none. Elm's warm smile and enthusiasm create an inviting atmosphere, making Coffee Cafe the go-to place for coffee lovers.
+
+Elm's story is a testament to the power of passion, dedication, and the art of brewing the perfect cup of coffee. Join us at Coffee Cafe and let Elm's expertise and warm hospitality transport you to the world of exceptional coffee."
+
+    </p>
+
+    <button onclick="changeImage()">Change Image</button>
+    <button onclick="addTextNode()">Add Text Node</button>
+    <button onclick="deleteNode()">Delete Node</button>
+
+    <img id="coffee-image" src="images/coffee1.jpg" alt="Coffee at Elm">
+
+    <script>
+        // Function to change the image source
+        function changeImage() {
+            var image = document.getElementById("coffee-image");
+            image.src="images/coffee2.png";
+        }
+
+        // Function to add a text node
+        function addTextNode() {
+            var parent = document.getElementById("intro-para");
+            var textNode = document.createTextNode("History is an important part of present!");
+            parent.appendChild(textNode);
+        }
+
+        // Function to delete the text node
+        function deleteNode() {
+            var parent = document.getElementById("intro-para");
+            var textNode = parent.childNodes[parent.childNodes.length - 1];
+            parent.removeChild(textNode);
+        }
+    </script>
+</body>
+</html>

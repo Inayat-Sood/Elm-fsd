@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Image</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <img id="myImage" src="images/blue2.jpg" alt="Image 1">
+</body>
+</html>
+
+<script>
+    $(document).ready(function() {
+        // When the image is clicked
+        $("#myImage").click(function() {
+            // Get the current image source
+            var currentImage = $(this).attr("src");
+            
+            // Check the current source and change it to a different image
+            if (currentImage === "images/blue2.jpg") {
+                $(this).attr("src", "images/blue1.jpg");
+                $(this).attr("alt", "Image 2");
+            } else if (currentImage === "images/blue1.jpg") {
+                $(this).attr("src", "images/blue2.jpg");
+                $(this).attr("alt", "Image 1");
+            }
+        });
+    });
+    </script>
+    
